@@ -1,6 +1,3 @@
-import operator
-
-
 class game(object):
   """docstring for game"""
   def __init__(self):
@@ -9,8 +6,8 @@ class game(object):
     self.currentRoll = 0
 
   def roll(self, pins):
-    self.score = operator.iadd(self.score, pins)
-    self.currentRoll = operator.iadd(self.currentRoll, 1)
+    self.score += pins
+    self.currentRoll += 1
     self.rolls.append(pins)
 
   def getScore(self):
