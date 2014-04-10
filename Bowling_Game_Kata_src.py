@@ -1,16 +1,23 @@
 class game(object):
   """docstring for game"""
   def __init__(self):
-    pass
+    self.score = 0
 
   def roll(self, pins):
-    pass
+    self.score = self.score + pins
 
-  def score(self):
-    return 0
+  def getScore(self):
+    return self.score
 
 def main():
-  pass
+  """
+  g = game()
+
+  for i in range(0, 20, 1):
+    g.roll(1)
+
+  print(str(g.getScore()))
+  """
 
 if __name__ == '__main__':
   main()
