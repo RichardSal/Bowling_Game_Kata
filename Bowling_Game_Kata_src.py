@@ -3,6 +3,9 @@ class game(object):
   def __init__(self):
     pass
 
+  def roll(self, pins):
+    pass
+
 def main():
   pass
 
