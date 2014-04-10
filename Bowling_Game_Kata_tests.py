@@ -9,6 +9,8 @@ class testCase1(unittest.TestCase):
     g = Bowling_Game_Kata_src.game()
     for i in range(20):
       g.roll(0)
+    self.assertEqual(0, g.score())
+
 
 if __name__ == "__main__":
   unittest.main() # run all tests
