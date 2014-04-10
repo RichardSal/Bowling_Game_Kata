@@ -14,13 +14,23 @@ class BowlingGameTest(unittest.TestCase):
   def testGutterGame(self):
     """ Class exists """
     self.rollMany(20, 0)
-
     self.assertEqual(0, g.getScore())
 
   def testAllOnes(self):
     self.rollMany(20, 1)
-
     self.assertEqual(20, g.getScore())
+
+
+
+"""
+  def testOneSpare(self):
+    g.roll(5)
+    g.roll(5)
+    g.roll(3)
+    self.rollMany(17, 0)
+
+    self.assertEqual(16, g.getScore())
+"""
 
 
 if __name__ == "__main__":
