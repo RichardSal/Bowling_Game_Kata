@@ -1,17 +1,22 @@
 class game(object):
   """docstring for game"""
   def __init__(self):
-    self.score = 0
-    self.rolls = [21]
+    self.rolls = []
     self.currentRoll = 0
 
   def roll(self, pins):
-    self.score += pins
     self.currentRoll += 1
     self.rolls.append(pins)
 
   def getScore(self):
-    return self.score
+    score = 0
+    i = 0
+
+    while i < len(self.rolls):
+      score += self.rolls[i]
+      i += 1
+
+    return score
 
 def main():
   pass
