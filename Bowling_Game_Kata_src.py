@@ -15,17 +15,19 @@ class game(object):
 
   def getScore(self):
     score = 0
-    i = 0
+    frameIndex = 0
 
     for frame in range(0, 10, 1):
-      if self.rolls[i] + self.rolls[i+1] == 10:
-        score += 10 + self.rolls[i+2]
-        i += 2
+      if self.isSpare(frameIndex):
+        score += 10 + self.rolls[frameIndex+2]
+        frameIndex += 2
       else:
-        score += self.rolls[i] + self.rolls[i+1]
-        i += 2
-
+        score += self.rolls[frameIndex] + self.rolls[frameIndex+1]
+        frameIndex += 2
     return score
+
+  def isSpare(self, frameIndex):
+    return self.rolls[frameIndex] + self.rolls[frameIndex + 1] == 10
 
 def main():
   pass
