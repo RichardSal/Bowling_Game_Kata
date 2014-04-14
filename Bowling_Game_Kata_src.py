@@ -18,7 +18,7 @@ class game(object):
     frameIndex = 0
 
     for frame in range(0, 10, 1):
-      if self.rolls[frameIndex] == 10:
+      if self.isStrike(frameIndex):
         score += 10 + self.strikeBonus(frameIndex)
         frameIndex += 1
 
@@ -30,6 +30,9 @@ class game(object):
         score += self.sumOfBallsInFrame(frameIndex)
         frameIndex += 2
     return score
+
+  def isStrike(self, frameIndex):
+    return self.rolls[frameIndex] == 10
 
   def sumOfBallsInFrame(self, frameIndex):
     return self.rolls[frameIndex] + self.rolls[frameIndex+1]
