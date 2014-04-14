@@ -18,9 +18,14 @@ class game(object):
     frameIndex = 0
 
     for frame in range(0, 10, 1):
-      if self.isSpare(frameIndex):
+      if self.rolls[frameIndex] == 10:
+        score += 10 + self.rolls[frameIndex+1] + self.rolls[frameIndex+2]
+        frameIndex += 1
+
+      elif self.isSpare(frameIndex):
         score += 10 + self.rolls[frameIndex+2]
         frameIndex += 2
+
       else:
         score += self.rolls[frameIndex] + self.rolls[frameIndex+1]
         frameIndex += 2
