@@ -35,13 +35,13 @@ class game(object):
     return self.rolls[frameIndex] == 10
 
   def sumOfBallsInFrame(self, frameIndex):
-    return self.rolls[frameIndex] + self.rolls[frameIndex+1]
+    return self.rolls[frameIndex] + self.rolls[frameIndex + 1]
 
   def spareBonus(self, frameIndex):
-    return self.rolls[frameIndex+2]
+    return self.rolls[frameIndex + 2]
 
   def strikeBonus(self, frameIndex):
-    return self.rolls[frameIndex+1] + self.rolls[frameIndex+2]
+    return self.rolls[frameIndex + 1] + self.rolls[frameIndex + 2]
 
   def isSpare(self, frameIndex):
     return self.rolls[frameIndex] + self.rolls[frameIndex + 1] == 10
