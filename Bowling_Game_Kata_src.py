@@ -19,17 +19,26 @@ class game(object):
 
     for frame in range(0, 10, 1):
       if self.rolls[frameIndex] == 10:
-        score += 10 + self.rolls[frameIndex+1] + self.rolls[frameIndex+2]
+        score += 10 + self.strikeBonus(frameIndex)
         frameIndex += 1
 
       elif self.isSpare(frameIndex):
-        score += 10 + self.rolls[frameIndex+2]
+        score += 10 + self.spareBonus(frameIndex)
         frameIndex += 2
 
       else:
-        score += self.rolls[frameIndex] + self.rolls[frameIndex+1]
+        score += self.sumOfBallsInFrame(frameIndex)
         frameIndex += 2
     return score
+
+  def sumOfBallsInFrame(self, frameIndex):
+    return self.rolls[frameIndex] + self.rolls[frameIndex+1]
+
+  def spareBonus(self, frameIndex):
+    return self.rolls[frameIndex+2]
+
+  def strikeBonus(self, frameIndex):
+    return self.rolls[frameIndex+1] + self.rolls[frameIndex+2]
 
   def isSpare(self, frameIndex):
     return self.rolls[frameIndex] + self.rolls[frameIndex + 1] == 10
