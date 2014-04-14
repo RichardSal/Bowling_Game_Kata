@@ -22,7 +22,6 @@ class BowlingGameTest(unittest.TestCase):
 
 
 
-"""
   def testOneSpare(self):
     g.roll(5)
     g.roll(5)
@@ -30,7 +29,6 @@ class BowlingGameTest(unittest.TestCase):
     self.rollMany(17, 0)
 
     self.assertEqual(16, g.getScore())
-"""
 
 
 if __name__ == "__main__":
